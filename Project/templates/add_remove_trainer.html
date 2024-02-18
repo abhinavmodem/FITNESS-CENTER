@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainer Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .trainer-form {
+            background-color: rgba(36, 7, 7, 0.5);
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 550px;
+            text-align: left; /* Align text to the left */
+            color: whitesmoke; /* Set the text color */
+            margin: auto; /* Center the form */
+            position: relative; /* Create a positioning context */
+            border: 2px solid grey; /* Thick yellow border */
+            gap: 2px;
+        }
+
+        select, input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: block; /* Make the button a block-level element */
+            margin-top: 10px; /* Add margin to the top */
+            margin-left: 50%; /* Center the button */
+            transform: translateX(-50%); /* Center the button horizontally */
+        }
+
+        button:hover {
+            border: 2px solid yellow;
+            background-color: rgb(255, 255, 255,0.6);
+            color:black;   
+        }
+
+        h2 {
+            text-align: center;
+            color: #fff;
+        }
+
+        .message{
+            color:red;
+            font-size: large;
+        }
+        .dashboard {
+            padding:4px;
+            font-size:medium;
+            margin-left:20px;
+            margin-bottom: 30px;
+            border:2px solid grey;
+            background-color: black;
+            color:white;
+        }
+        .dashboard:hover{
+            background-color: white;
+            color:black;
+            border:2px solid grey;
+        }
+    </style>
+</head>
+<body>
+    <div class="trainer-form">
+        <h2>Trainer Management</h2>
+        <button class="dashboard" onclick="location.href='/admin_dashboard'">Home</button>
+
+        <form action="/add_removetrainer" method="post">
+            {% if message %}
+                <p class="message">{{ message }}</p>
+            {% endif %}
+            <label for="operation">Select Operation:</label>
+            <select id="operation" name="operation" required>
+                <option value="add">Add Trainer</option>
+                <option value="remove">Remove Trainer</option>
+            </select>
+            <label for="trainer_name">Trainer Name:</label>
+            <input type="text" id="trainer_name" name="trainer_name" placeholder="Enter Trainer Name" required>
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter Username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter Password" required>
+
+            <label for="trainer_id">Trainer ID:</label>
+            <input type="text" id="trainer_id" name="trainer_id" placeholder="Enter Trainer ID" required>
+
+            <label for="trainer_contact">Phone Number:</label>
+            <input type="tel" id="trainer_contact" name="trainer_contact" placeholder="Enter Phone Number" required">
+
+            
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

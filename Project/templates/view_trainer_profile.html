@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View trainer Profile</title>
+    <style>
+        body {
+            background-color: black;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            color: white;
+        }
+
+        .profile-container {
+            background-color: rgba(68, 65, 65, 0.7);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 50%;
+            margin-top: 50px;
+        }
+
+        h2 {
+            margin-bottom: 30px;
+        }
+
+        label {
+            font-size: larger;
+        }
+
+        p {
+            font-size: larger;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            max-width: 200px;
+            height: auto;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px; 
+            margin-left:0px; 
+        }
+
+        button {
+            background-color: rgba(52, 17, 75, 0.6);
+            padding: 10px;
+            border: 2px solid brown;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            text-decoration: none;
+            transform: translateY(-2.5px);
+            background-color: orangered;
+        }
+        #c1{
+            padding:10px;
+            border-radius:4px;
+            background-color: grey;
+            color:black;
+        }
+        #c2{
+            padding:10px;
+            border-radius:4px;
+            background-color: grey;
+            color:black
+        }
+        #c3{
+            padding:10px;
+            border-radius:4px;
+            background-color: grey;
+            color:black
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <img class="logo" src="static/gym_logo.jpg" alt="Gym Logo">
+        <h1>Trainer Profile</h1>
+        <div class="main-content">
+        <label for="trainer_id" id="c1">Trainer ID:</label>
+        <p>{{ trainer[0] }}</p>
+
+        <label for="trainer_name" id="c2">Trainer Name:</label>
+        <p>{{ trainer[1] }}</p>
+
+        <label for="trainer_contact" id="c3">Contact Number:</label>
+        <p>{{ trainer[2] }}</p>
+
+        <button onclick="location.href='/home'">Back to Dashboard</button>
+    </div>
+    </div>
+</body>
+</html>

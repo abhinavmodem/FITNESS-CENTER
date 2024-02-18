@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainer's Clients</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            margin: 0;
+            padding: 20px;
+            color: #f2f2f2;
+        }
+
+        .user-container {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .user-section {
+            flex: 1;
+            margin-right: 20px;
+            padding: 20px;
+            background-color: rgb(255, 255, 255, 0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: white;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            color: black;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            color: white;
+            background-color: black;
+            border-radius: 8px;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+<div class="user-container">
+    <div class="user-section">
+        <h2>Clients Assigned to Trainer</h2>
+        <table>
+            <tr>
+                <th>Member ID</th>
+                <th>Name</th>
+                <th>Contact</th>
+                <th>Workout Plan ID</th>
+            </tr>
+            {% for client in clients %}
+                <tr>
+                    <td>{{ client[0] }}</td>
+                    <td>{{ client[1] }}</td>
+                    <td>{{ client[2] }}</td>
+                    <td>{{ client[3] }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+</body>
+</html>

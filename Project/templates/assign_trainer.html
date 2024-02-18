@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign Trainer to Member</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .assignment-form {
+            background-color: rgba(36, 7, 7, 0.5);
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 550px;
+            text-align: left;
+            color: whitesmoke;
+            margin: auto;
+            position: relative;
+            border: 2px solid grey;
+            gap: 2px;
+        }
+
+        select,
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: block;
+            margin-top: 10px;
+            margin-left: 50%;
+            transform: translateX(-50%);
+        }
+
+        button:hover {
+            border: 2px solid yellow;
+            background-color: rgb(255, 255, 255, 0.6);
+            color: black;
+        }
+
+        h2 {
+            text-align: center;
+            color: #fff;
+        }
+
+        .message {
+            color: red;
+            font-size: large;
+        }
+
+        .dashboard {
+            padding: 4px;
+            font-size: medium;
+            margin-left: 20px;
+            margin-bottom: 30px;
+            border: 2px solid grey;
+            background-color: black;
+            color: white;
+        }
+
+        .dashboard:hover {
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="assignment-form">
+        <h2>Assign Trainer to Member</h2>
+        <button class="dashboard" onclick="location.href='/admin_dashboard'">Home</button>
+        <form action="/assign_trainer" method="post">
+            {% if message %}
+                <p class="message">{{ message }}</p>
+            {% endif %}
+            <label for="member_id">Member ID:</label>
+            <input type="text" id="member_id" name="member_id" placeholder="Enter Member ID" required>
+
+            <label for="trainer_id">Trainer ID:</label>
+            <input type="text" id="trainer_id" name="trainer_id" placeholder="Enter Trainer ID" required>
+
+            <button type="submit">Assign Trainer</button>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Users</title>
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+        background-color: black;
+        margin: 0;
+        padding: 20px;
+        }
+
+        .user-container {
+            display: flex;
+            margin-bottom: 20px;
+            color: #f2f2f2;
+        }
+
+        .user-section {
+            flex: 1;
+            margin-right: 20px;
+            padding: 20px;
+            background-color: rgb(255, 255, 255,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+
+        h2 {
+            color:white;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            color:black;
+
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            color:white;
+            background-color: black;
+            border-radius: 8px;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+<div class="user-container">
+
+    <div class="user-section">
+        <h2>Members</h2>
+        <table>
+            <tr>
+                <th>Member ID</th>
+                <th>Name</th>
+                <th>Contact</th>
+                <th>Email</th>
+                <th>Workout Plan ID</th>
+            </tr>
+            {% for member in members %}
+                <tr>
+                    <td>{{ member[0] }}</td>
+                    <td>{{ member[1] }}</td>
+                    <td>{{ member[2] }}</td>
+                    <td>{{ member[3] }}</td>
+                    <td>{{ member[4] }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <div class="user-section">
+        <h2>Trainers</h2>
+        <table>
+            <tr>
+                <th>Trainer ID</th>
+                <th>Name</th>
+                <th>Contact</th>
+            </tr>
+            {% for trainer in trainers %}
+                <tr>
+                    <td>{{ trainer[0] }}</td>
+                    <td>{{ trainer[1] }}</td>
+                    <td>{{ trainer[2] }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+</div>
+
+<div class="user-container">
+
+    <div class="user-section">
+        <h2>Receptionists</h2>
+        <table>
+            <tr>
+                <th>Receptionist ID</th>
+                <th>Name</th>
+                <th>Contact</th>
+            </tr>
+            {% for receptionist in receptionists %}
+                <tr>
+                    <td>{{ receptionist[0] }}</td>
+                    <td>{{ receptionist[1] }}</td>
+                    <td>{{ receptionist[2] }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <div class="user-section">
+        <h2>Admins</h2>
+        <table>
+            <tr>
+                <th>Admin ID</th>
+                <th>Username</th>
+            </tr>
+            {% for admin in admins %}
+                <tr>
+                    <td>{{ admin[0] }}</td>
+                    <td>{{ admin[1] }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+</div>
+<div class="user-container">
+    <div class="user-section">
+        <h2>Workout Plans</h2>
+        <table>
+            <tr>
+                <th>Plan ID</th>
+                <th>Name</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+            </tr>
+            {% for plan in workout_plans %}
+                <tr>
+                    <td>{{ plan[0] }}</td>
+                    <td>{{ plan[1] }}</td>
+                    <td>{{ plan[2] }}</td>
+                    <td>{{ plan[3] }}</td>
+                    <td>{{ plan[4] }}</td>
+                    <td>{{ plan[5] }}</td>
+                    <td>{{ plan[6] }}</td>
+                    <td>{{ plan[7] }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+<div class="user-container">
+    <div class="user-section">
+        <h2>Equipment</h2>
+        <table>
+            <tr>
+                <th>Equipment ID</th>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Purchase Date</th>
+            </tr>
+            {% for equipment in equipment %}
+                <tr>
+                    <td>{{ equipment[0] }}</td>
+                    <td>{{ equipment[1] }}</td>
+                    <td>{{ equipment[2] }}</td>
+                    <td>{{ equipment[3] }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+</body>
+</html>

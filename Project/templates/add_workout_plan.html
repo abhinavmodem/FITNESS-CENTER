@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Workout Plan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .workout-plan-form {
+            background-color: rgba(36, 7, 7, 0.5);
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 550px;
+            text-align: left;
+            color: whitesmoke;
+            margin: auto;
+            position: relative;
+            border: 2px solid grey;
+            gap: 2px;
+        }
+
+        select, input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: block;
+            margin-top: 10px;
+            margin-left: 50%;
+            transform: translateX(-50%);
+        }
+
+        button:hover {
+            border: 2px solid yellow;
+            background-color: rgb(255, 255, 255, 0.6);
+            color: black;
+        }
+
+        h2 {
+            text-align: center;
+            color: #fff;
+        }
+
+        .message {
+            color: red;
+            font-size: large;
+        }
+        .dashboard {
+            padding: 4px;
+            font-size: medium;
+            margin-left: 20px;
+            margin-bottom: 30px;
+            border: 2px solid grey;
+            background-color: black;
+            color: white;
+        }
+        .dashboard:hover {
+            background-color: white;
+            color: black;
+            border: 2px solid grey;
+        }
+    </style>
+</head>
+<body>
+    <div class="workout-plan-form">
+        <h2>Add Workout Plan</h2>
+        <button class="dashboard" onclick="location.href='/home'">Home</button>
+
+        <form action="/add_workout_plan" method="post">
+            {% if message %}
+                <p class="message">{{ message }}</p>
+            {% endif %}
+            <label for="plan_name">Plan Name:</label>
+            <input type="text" id="plan_name" name="plan_name" placeholder="Enter Plan Name" required>
+
+            <label for="monday">Monday:</label>
+            <input type="text" id="monday" name="monday" placeholder="Enter Monday Workout" required>
+
+            <label for="tuesday">Tuesday:</label>
+            <input type="text" id="tuesday" name="tuesday" placeholder="Enter Tuesday Workout" required>
+
+            <label for="wednesday">Wednesday:</label>
+            <input type="text" id="wednesday" name="wednesday" placeholder="Enter Wednesday Workout" required>
+
+            <label for="thursday">Thursday:</label>
+            <input type="text" id="thursday" name="thursday" placeholder="Enter Thursday Workout" required>
+
+            <label for="friday">Friday:</label>
+            <input type="text" id="friday" name="friday" placeholder="Enter Friday Workout" required>
+
+            <label for="saturday">Saturday:</label>
+            <input type="text" id="saturday" name="saturday" placeholder="Enter Saturday Workout" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receptionist Dashboard</title>
+    <style>
+        body {
+            background-color: black;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .header-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            gap:10px;
+        }
+
+        h1 {
+            color: white;
+            margin-top: 40px;
+            margin-bottom:10px;
+            margin-right:0px;
+            padding-right:0px;
+            padding-left: 0px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            width:400px;
+        }
+
+        button.logout-btn {
+            background-color: rgba(52, 17, 75, 0.6);
+            padding: 5px;
+            border: 2px solid brown;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 26px;
+            margin-left:10px;
+        }
+
+        button.logout-btn:hover {
+            text-decoration: none;
+            transform: translateY(-2.5px);
+            background-color: orangered;
+        }
+
+        .dashboard {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            max-width: 1000px;
+            align-items: center;
+            justify-content: center;
+            padding-top:20px;
+        }
+
+        .box {
+            font-size: larger;
+            border: 2px solid grey;
+            text-decoration: none;
+            background-color: rgba(68, 65, 65, 0.7);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: calc(40% - 10px);
+            margin-bottom: 20px;
+            transition: transform 0.3s; 
+        }
+
+        .box a {
+            text-decoration: none;
+            color: #fff;
+            display: block;
+            height: 100%;
+        }
+
+        .box:hover {
+            transform: translateY(-5px);
+            background-color: rgba(25, 104, 128, 0.6);
+            border: 2.5px solid yellow;
+        }
+
+        h3 {
+            color: #fff;
+        }
+
+        .logo {
+            max-width: 15%;
+            height: auto;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px; 
+            margin-left:0px; 
+        }
+        .profile{
+            background-color: rgba(52, 17, 75, 0.6);
+            padding-left: 5px;
+            padding-right: 5px;
+            padding-top: 6px;
+            padding-bottom: 6px;
+            border: 2px solid brown;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 26px;
+            margin-left:10px;
+        }
+        .profile:hover{
+            text-decoration: none;
+            transform: translateY(-2.5px);
+            background-color: orangered;
+        }
+        .message{
+            color:red;
+            font-size: larger;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-container">
+        <img class="logo" src="static/gym_logo.jpg" alt="Gym Logo">
+        <h1>Receptionist Portal</h1>
+        <button class="profile" onclick="location.href='/view_receptionist_profile'">Profile</button>
+        <button class="logout-btn" onclick="location.href='/logout'">Log-out</button>
+        
+
+    </div>
+    {% if message %}
+            <p class="message">{{ message }}</p>
+    {% endif %}
+    <div class="dashboard">
+        <a class="box" href="/add_remove_member">
+            <h3>Add/Remove Gym Member</h3>
+        </a>
+        <a class="box" href="/view_users">
+            <h3>View Users/Equipment/Plans</h3>
+        </a>
+        <a class="box" href="/send_reminder_emails">
+            <h3>Send Reminder Emails</h3>
+        </a>
+    </div>
+</body>
+</html>

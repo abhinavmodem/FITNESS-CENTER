@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            background-color: black;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .header-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            gap:10px;
+        }
+
+        h1 {
+            color: white;
+            margin-top: 40px;
+            margin-bottom:10px;
+            margin-right:0px;
+            padding-right:0px;
+            padding-left: 0px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            width:200px
+        }
+
+        button.logout-btn {
+            background-color: rgba(52, 17, 75, 0.6);
+            padding: 5px;
+            border: 2px solid brown;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 26px;
+            margin-left:10px;
+        }
+
+        button.logout-btn:hover {
+            text-decoration: none;
+            transform: translateY(-2.5px);
+            background-color: orangered;
+
+
+        }
+
+        .dashboard {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            max-width: 1000px;
+            align-items: center;
+        }
+
+        .box {
+            font-size: larger;
+            border: 2px solid grey;
+            text-decoration: none;
+            background-color: rgba(68, 65, 65, 0.7);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: calc(40% - 10px);
+            margin-bottom: 20px;
+            transition: transform 0.3s; 
+        }
+
+        .box a {
+            text-decoration: none;
+            color: #fff; /* Set text color to white */
+            display: block;
+            height: 100%; /* Ensure the link takes up the full height of the box */
+        }
+
+        .box:hover {
+            transform: translateY(-5px);
+            background-color: rgba(25, 104, 128, 0.6);
+            border: 2.5px solid yellow;
+        }
+
+        
+
+        h3 {
+            color: #fff; /* Set text color to white */
+        }
+        .logo {
+            max-width: 15%;
+            height: auto;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px; 
+            margin-left:0px; 
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="header-container">
+        <img class="logo" src="static/gym_logo.jpg" alt="Gym Logo">
+        <h1>Admin Portal</h1>
+        <button class="logout-btn" onclick="location.href='/logout'">Log-out</button>
+    </div>
+    
+    <div class="dashboard">
+        <a class="box" href="/add_remove_trainer">
+            <h3>Add/Remove Trainer</h3>
+            <!-- Add content for Add/Remove Trainer option -->
+        </a>
+        <a class="box" href="/add_remove_member">
+            <h3>Add/Remove Gym Member</h3>
+            <!-- Add content for Add/Remove Gym Member option -->
+        </a>
+        <a class="box" href="/add_remove_receptionist">
+            <h3>Add/Remove Receptionist</h3>
+            <!-- Add content for Add/Remove Receptionist option -->
+        </a>
+        <a class="box" href="/view_users">
+            <h3>View Users/Workout Plans/Equipment</h3>
+            <!-- Add content for View Clients option -->
+        </a>
+        <a class="box" href="/add_equipment_page">
+            <h3>Add Equipments</h3>
+            <!-- Add content for Add Equipments option -->
+        </a>
+        <a class="box" href="/assign_trainer_page">
+            <h3>Assign Trainers to Clients</h3>
+            <!-- Add content for Assign Trainers to Clients option -->
+        </a>
+    </div>
+</body>
+</html>
